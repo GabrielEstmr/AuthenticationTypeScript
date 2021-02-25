@@ -12,9 +12,6 @@
       "@modules/*": [
         "modules/*"
       ],
-      "@config/*": [
-        "config/*"
-      ],
       "@shared/*": [
         "shared/*"
       ]

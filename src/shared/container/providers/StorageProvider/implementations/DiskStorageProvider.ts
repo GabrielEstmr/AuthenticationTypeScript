@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import uploadConfig from '@config/upload';
+import uploadConfig from '@shared/config/upload';
 import IStorageProvider from '../models/IStorageProvider';
 import { isNormalToken } from 'tsyringe';
 
@@ -34,7 +34,4 @@ class DiskStorageProvider implements IStorageProvider {
 export default DiskStorageProvider;
 
 
-// Caralho!!! Eu fiz muitos teste mas estou achando que realmente o teclado nao foi uma boa compra =(
-
-// O que tentar Fazer: Tentar trocar o Teclado e ver se o outro da multilaser é melhor ()
 

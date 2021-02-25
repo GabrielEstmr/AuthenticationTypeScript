@@ -1,25 +1,19 @@
 import { Router } from 'express';
 import multer from 'multer';
-import uploadConfig from '@config/upload';
+import uploadConfig from '@shared/config/upload';
 import { celebrate, Segments, Joi } from 'celebrate';
 
-// import UsersRepository from '@modules/users/infra/typeorm/Repositories/UserRepository';
-
 import UsersController from '../controllers/UsersController';
-//import UserAvatarController from '../controllers/UserAvatarController';
 
 
 
 const usersRouter = Router();
 const usersController = new UsersController();
-//const userAvatarController = new UserAvatarController();
 
-import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
-// import User from '../models/User';
+// import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 
 
 const upload = multer(uploadConfig);//funciona como middleware > por isso vai dentro da funcao da rota
-// upload.single('avatar') > nome do campo = avatar
 
 usersRouter.post('/', celebrate({
     [Segments.BODY]: {

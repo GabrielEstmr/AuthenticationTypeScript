@@ -2,17 +2,17 @@
     "name": "default",
     "type": "postgres",
     "host": "localhost",
-    "port": 5434,
+    "port": 5435,
     "username": "postgres",
     "password": "docker",
-    "database": "auth_postgres",
+    "database": "auth_challenger_postgres",
     "entities": [
         "./src/modules/**/infra/typeorm/entities/*.ts"
     ],
     "migrations": [
-        "./src/shared/infra/typeorm/migrations/*ts"
+        "./src/shared/typeorm/migrations/*ts"
     ],
     "cli": {
-        "migrationsDir": "./src/shared/infra/typeorm/migrations"
+        "migrationsDir": "./src/shared/typeorm/migrations"
     }
 }

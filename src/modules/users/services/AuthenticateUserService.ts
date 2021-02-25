@@ -3,9 +3,10 @@ import { sign } from 'jsonwebtoken';
 import { injectable, inject } from 'tsyringe';
 
 import IUsersRepository from '../repositories/IUsersRepository';
-import IHashProvider from '../providers/HashProvider/models/IHashProvider';
+import IHashProvider from '../infra/providers/HashProvider/models/IHashProvider';
+
 import User from '@modules/users/infra/typeorm/entities/User';
-import authConfig from '@config/auth';
+import authConfig from '@shared/config/auth';
 
 import AppError from '@shared/errors/AppError';
 

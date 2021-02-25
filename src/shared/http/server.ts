@@ -11,7 +11,7 @@ import routes from './routes';
 import AppError from '@shared/errors/AppError';
 import uploadConfig from '@shared/config/upload';
 
-import '@shared/infra/typeorm';
+import '@shared/typeorm';
 import '@shared/container';
 
 const app = express();
@@ -48,6 +48,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 
 
 app.listen(3334, () => {
-    console.log('🚀 Server started on port 3333');
+    console.log('🚀 Server started on port 3334');
 });
 

@@ -4,7 +4,7 @@ import AppError from '@shared/errors/AppError';
 
 import User from '../infra/typeorm/entities/User';
 import IUsersRepository from '../repositories/IUsersRepository';
-import IHashProvider from '../providers/HashProvider/models/IHashProvider';
+import IHashProvider from '../infra/providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
     user_id: string;
