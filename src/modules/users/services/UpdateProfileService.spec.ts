@@ -81,6 +81,9 @@ describe('UpdateProfile', () => {
             name: 'John Doe',
             email: 'johndoe@example.com',
             password: '123456',
+            birth_date: new Date(2021, 4, 10, 13),
+            cpf: '10018297609',
+            rg: '16634021'
         });
 
         await expect(
@@ -98,6 +101,9 @@ describe('UpdateProfile', () => {
             name: 'John Doe',
             email: 'johndoe@example.com',
             password: '123456',
+            birth_date: new Date(2021, 4, 10, 13),
+            cpf: '10018297609',
+            rg: '16634021'
         });
 
         await expect(
