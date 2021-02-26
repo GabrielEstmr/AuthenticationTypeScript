@@ -21,6 +21,9 @@ class User {
     @Column()
     cpf: string;
 
+    @Column('time without time zone')
+    birth_date: Date;
+
     @CreateDateColumn()
     created_at: Date;
 

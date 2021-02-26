@@ -4,4 +4,5 @@ export default interface ICreateUserDTO {
     password: string;
     rg: string;
     cpf: string;
+    birth_date: Date;
 }

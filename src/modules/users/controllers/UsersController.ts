@@ -9,7 +9,7 @@ import { Request, Response } from 'express';
 
 export default class UsersControllers {
     public async create(request: Request, response: Response): Promise<Response> {
-        const { name, email, password, cpf, rg } = request.body;
+        const { name, email, password, cpf, rg, birth_date } = request.body;
         // const usersRepository = new UsersRepository();
 
 
@@ -20,7 +20,8 @@ export default class UsersControllers {
             email,
             password,
             cpf,
-            rg
+            rg,
+            birth_date,
         });
 
         delete user.password;//nao reconheceu mas existe

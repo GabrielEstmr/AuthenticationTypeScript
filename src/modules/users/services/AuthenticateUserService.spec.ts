@@ -1,7 +1,7 @@
 import AppError from '@shared/errors/AppError';
 
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
-import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
+import FakeHashProvider from '../infra/providers/HashProvider/fakes/FakeHashProvider';
 import AuthenticateUserService from './AuthenticateUserService';
 import CreateUserService from './CreateUserService';
 
@@ -27,6 +27,9 @@ describe('AuthenticateUser', () => {
             name: 'John Doe',
             email: 'johndoe@example.com',
             password: '123123',
+            birth_date: new Date(2021, 4, 10, 13),
+            cpf: '10018297609',
+            rg: '16634021'
         });
 
         const response = await authenticateUser.execute({
@@ -52,6 +55,9 @@ describe('AuthenticateUser', () => {
             name: 'John Doe',
             email: 'johndoe@example.com',
             password: '123123',
+            birth_date: new Date(2021, 4, 10, 13),
+            cpf: '10018297609',
+            rg: '16634021'
         });
 
         await expect(

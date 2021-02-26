@@ -4,16 +4,18 @@ import uploadConfig from '@shared/config/upload';
 import { celebrate, Segments, Joi } from 'celebrate';
 
 import UsersController from '../controllers/UsersController';
+import UserAvatarController from '../controllers/UserAvatarController';
 
-
+import ensureAuthenticated from '@modules/users/middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
 const usersController = new UsersController();
+const userAvatarController = new UserAvatarController();
 
 // import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 
 
-const upload = multer(uploadConfig);//funciona como middleware > por isso vai dentro da funcao da rota
+// const upload = multer(uploadConfig);//funciona como middleware > por isso vai dentro da funcao da rota
 
 usersRouter.post('/', celebrate({
     [Segments.BODY]: {
@@ -22,12 +24,13 @@ usersRouter.post('/', celebrate({
         password: Joi.string().required(),
         rg: Joi.string().required(),
         cpf: Joi.string().required(),
+        birth_date: Joi.date(),
     }
 }), usersController.create);
 
 //PUT > possibilidade de atualizar todos os campos de uma linha/registro
 //PATCH: auteração de apenas UM campo de um registro
-//usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), userAvatarController.update);
+usersRouter.patch('/avatar', ensureAuthenticated, userAvatarController.update);
 
 
 export default usersRouter;
